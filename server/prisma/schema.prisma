@@ -50,3 +50,12 @@ model Enrollment {
   courseId  Int
   grade     Float?   // الدرجة
 }
+
+
+// model forTesting{
+//   helo Int @id @default(autoincrement())
+//   prodect String 
+//   catogries String
+//   createdAT DateTime @default(now()) 
+//   ubdatedAT DateTime @updatedAt
+// }
