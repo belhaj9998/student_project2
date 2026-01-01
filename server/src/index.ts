@@ -2,7 +2,7 @@ import express from "express";
 import { config } from "./config/app.config";
 import { loggerMiddleware } from "./middlewares/loggermiddleware";
 import departmentRoutes from "./routers/departmentRoute";
-
+import studentRoutes from "./routers/studentRoute";
 const app = express();
 
 // Middlewares
@@ -11,7 +11,7 @@ app.use(loggerMiddleware);
 
 // Routes
 app.use("/departments", departmentRoutes);
-
+app.use("/students",studentRoutes);
 // Root route
 app.get("/", (req, res) => {
     res.send("Welcome to Student Management API");
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 const PORT = config.port;
 
 app.listen(Number(PORT), "0.0.0.0", () => {
-    console.log(`Server is running on port ${PORT}`);
-    console.log(`${config.appName} is running on port ${PORT}`)
+    console.log(`http://localhost:${PORT}`);
+    console.log(`${config.appName} is running on port ${PORT} `)
 
 });
